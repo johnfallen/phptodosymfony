@@ -1,0 +1,9 @@
+{# 
+ * I display responses from the application.
+ *
+ * @author John Allen
+ * @version 1.0
+#}
+{% if app.session.flashbag.get('response') is defined  %}
+	{{ dump( app.session.flashbag.get('response') ) }}
+{% endif %}

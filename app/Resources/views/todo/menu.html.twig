@@ -1,0 +1,16 @@
+{#
+ * I display the menu.
+ *
+ * @author John Allen
+ * @version 1.0
+#}
+<nav class="navbar navbar-default">
+   <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="{{ url( 'todoHomepage' ) }}">Home</a></li>
+        <li><a href="{{ url( 'todoEdit', { id : 0 } ) }}">New ToDo &raquo;</a></li>
+        <li><a href="{{ url( 'deleteCompleted' ) }}">Clear Completed</a></li>
+      </ul>
+    </div>
+</nav>
