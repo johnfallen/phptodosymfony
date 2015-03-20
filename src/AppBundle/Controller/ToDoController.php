@@ -10,8 +10,8 @@ namespace AppBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class ToDoController extends Controller
-{
+class ToDoController extends Controller {
+    
     /**
      * @Route("/todo", name="todoHomepage")
      */
@@ -23,7 +23,6 @@ class ToDoController extends Controller
 			'todos' => $todos
 		));
     }
-
 
     /**
      * @Route("/todo/delete/{id}", name="todoDelete")
@@ -49,7 +48,6 @@ class ToDoController extends Controller
     	return $this->redirectToRoute('todoHomepage');
     }
 
-
     /**
      * @Route("/todo/edit/{id}", name="todoEdit")
      */
@@ -61,7 +59,6 @@ class ToDoController extends Controller
 			'todo' => $todo
 		));
     }
-
 
     /**
      * @Route("/todo/save", name="todoSave")
@@ -89,7 +86,6 @@ class ToDoController extends Controller
 
     	return $this->redirectToRoute('todoHomepage');
     }
-
 
     // ****************************** PRIVATE ****************************** //
     /**
