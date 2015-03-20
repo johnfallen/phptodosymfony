@@ -9,4 +9,3 @@ services:
 #        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
      ToDoService:
         class: AppBundle\org\jfa\todo\com\ToDoService
-#       arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
