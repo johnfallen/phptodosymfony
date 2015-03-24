@@ -1,0 +1,15 @@
+{#
+ * I display the cat menu.
+ *
+ * @author John Allen
+ * @version 1.0
+#}
+<nav class="navbar navbar-default">
+   <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="{{ url( 'catIndex' ) }}">Cat Home</a></li>
+        <li><a href="{{ url( 'catEdit', { id : 0 } ) }}">New Cat &raquo;</a></li>
+      </ul>
+    </div>
+</nav>

@@ -1,0 +1,26 @@
+{% extends "cat/base.html.twig" %}
+{% block content %}
+    <h1>Edit Cat</h1>
+
+    {{ form_start(form) }}
+    {{ form_row(form.name) }}
+    {{ form_row(form.description) }}
+
+    <div>
+        <label for="owner">Owner</label><br />
+        {% for owner in ownerList %}
+            <input type="radio" name="owner" id="owner" value="{{ owner.getID() }}"
+                {%  if ( cat is not null )
+                    and ( owner.getID() == cat.getOwner().getID() )
+                %}
+                    checked
+                {% endif %}
+            />
+                {{ owner.getFirstName() }}
+                {{ owner.getLastName() }}
+            <br />
+        {% endfor %}
+    </div>
+
+    {{ form_end(form) }}
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "cat/base.html.twig" %}
+{% block content %}
+{% if catList|length > 0 %}
+<h1>All The Cats!</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>&nbsp;</th>
+                <th>Name</th>
+                <th>Description?</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for cat in catList %}
+            <tr>
+                <td><a href="{{ url('catEdit', { id : cat.getID() }) }}">edit</a></td>
+                <td>{{ cat.getName() }}</td>
+                <td>{{ cat.getDescription() }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endif %}
+{% endblock %}
