@@ -4,20 +4,16 @@
  * @author John Allen
  * @version 1.0
 #}
-<!DOCTYPE html>
-<html>
+{% include 'shared/documentdeclaration.html.twig' %}
 <head>
 <meta charset="UTF-8" />
-<title>Cat</title>
-<link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
-<link rel="stylesheet" href="{{ asset('css/style.css') }}">
-<script type="text/javascript" src="{{ asset('js/jquery-2.1.3.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/bootstrap.min.js') }}"></script>
+<title>Cats</title>
+{% include 'shared/scripts.html.twig' %}
 </head>
 <body>
-{% include 'cat/menu.html.twig' %}
+{% include 'shared/menu.html.twig' %}
 {% include 'shared/response.html.twig' %}
 {% block content %}{% endblock %}
-{% include 'cat/footer.html.twig' %}
+{% include 'shared/footer.html.twig' %}
 </body>
 </html>
