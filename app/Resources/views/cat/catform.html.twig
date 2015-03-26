@@ -1,16 +1,35 @@
+{#
+ * I am the cat edit form template.
+ *
+ * @author John Allen
+ * @version 1.0
+#}
 {% extends "cat/base.html.twig" %}
 {% block content %}
     <h1>Edit Cat</h1>
 
-    {{ form_start(form) }}
-    {{ form_row(form.name) }}
-    {{ form_row(form.description) }}
+    {{ form_start( form ) }}
 
     <div>
-        <label for="owner">Owner</label><br />
+        {{ form_label( form.name ) }}
+        {{ form_widget( form.name ) }}
+        {% if errors.name is defined %}
+            <span class="error">{{ errors.name }}</span>
+        {% endif %}
+    </div>
+    <div>
+        {{ form_label( form.description ) }}
+        {{ form_widget( form.description ) }}
+        {% if errors.description is defined %}
+            <span class="error">{{ errors.description }}</span>
+        {% endif %}
+    </div>
+    <div>
+        <label for="owner[id]">Owner</label><br />
         {% for owner in ownerList %}
-            <input type="radio" name="owner" id="owner" value="{{ owner.getID() }}"
+            <input type="radio" name="owner[id]" id="owner[id]" value="{{ owner.getID() }}"
                 {%  if ( cat is not null )
+                    and ( cat.getOwner() is not null )
                     and ( owner.getID() == cat.getOwner().getID() )
                 %}
                     checked
@@ -20,7 +39,18 @@
                 {{ owner.getLastName() }}
             <br />
         {% endfor %}
+        {% if errors.owner is defined %}
+            <span class="error">{{ errors.owner }}</span>
+        {% endif %}
     </div>
 
     {{ form_end(form) }}
+
+    {# the delete link #}
+    {% if cat is not null %}
+        <hr />
+        <p>
+            <a href="{{ url('catDelete', { id : cat.getID() }) }}">Delete Cat &raquo;</a>
+        </p>
+    {% endif %}
 {% endblock %}

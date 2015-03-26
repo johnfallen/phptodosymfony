@@ -1,5 +1,11 @@
 <?php
 namespace AppBundle\Entity;
+/**
+ * I model an Cat Owner.
+ *
+ * @author John Allen
+ * @version 1.0
+ */
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
@@ -42,7 +48,6 @@ class Owner
         $this->cats = new ArrayCollection();
     }
 
-
     /**
      * Get id
      *
@@ -51,6 +56,18 @@ class Owner
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set id
+     *
+     * @return integer
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
     }
 
     /**
@@ -130,5 +147,21 @@ class Owner
     public function getCats()
     {
         return $this->cats;
+    }
+
+
+    /**
+     * I return if I own any cats or not.
+     *
+     * @return bool
+     */
+    public function hasCats(){
+
+        if ( count( $this->cats ) > 0 ){
+            return true;
+        } else {
+            return false;
+        }
+
     }
 }

@@ -1,8 +1,12 @@
 <?php
 namespace AppBundle\Entity;
-
+/**
+ * I am the Owner Repository or Gateway if you will.
+ *
+ * @author John Allen
+ * @version 1.0
+ */
 use Doctrine\ORM\EntityRepository;
-
 
 class OwnerRepository extends EntityRepository {
 

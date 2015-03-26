@@ -1,3 +1,9 @@
+{#
+ * I display the list of cats.
+ *
+ * @author John Allen
+ * @version 1.0
+#}
 {% extends "cat/base.html.twig" %}
 {% block content %}
 {% if catList|length > 0 %}
@@ -7,7 +13,8 @@
             <tr>
                 <th>&nbsp;</th>
                 <th>Name</th>
-                <th>Description?</th>
+                <th>Description</th>
+                <th>Owner</th>
             </tr>
         </thead>
         <tbody>
@@ -16,6 +23,7 @@
                 <td><a href="{{ url('catEdit', { id : cat.getID() }) }}">edit</a></td>
                 <td>{{ cat.getName() }}</td>
                 <td>{{ cat.getDescription() }}</td>
+                <td>{{ cat.getOwner().getFirstName() }} {{ cat.getOwner().getLastName() }}</td>
             </tr>
         {% endfor %}
         </tbody>

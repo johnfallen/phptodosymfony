@@ -1,5 +1,5 @@
 <?php
-namespace AppBundle\Controller\ToDo;
+namespace AppBundle\Controller;
 /**
  * I am the ToDoController.
  *

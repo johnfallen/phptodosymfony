@@ -1,0 +1,36 @@
+{#
+ * I display a list of Cat Owners.
+ *
+ * @author John Allen
+ * @version 1.0
+#}
+{% extends "cat/base.html.twig" %}
+{% block content %}
+    {% if ownerList|length > 0 %}
+        <h1>Owner List</h1>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>&nbsp;</th>
+                <th>Name</th>
+                <th>Number of Cats</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for owner in ownerList %}
+                <tr>
+                    <td><a href="{{ url('catOwnerEdit', { id : owner.getID() }) }}">edit</a></td>
+                    <td>{{ owner.getFirstName() }} {{ owner.getLastName() }}</td>
+                    <td>{{ owner.getCats()|length }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+
+    <hr />
+    <p>
+        <a href="{{ url('catOwnerEdit', { id : 0 }) }}">New Possible Owner &raquo;</a>
+    </p>
+
+{% endblock %}

@@ -1,5 +1,11 @@
 <?php
-namespace AppBundle\Form\Cat;
+namespace AppBundle\Form;
+/**
+ * I am the Cat form. I describe the requirements for a form to submit a Cat.
+ *
+ * @author John Allen
+ * @version 1.0
+ */
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -18,7 +24,9 @@ class CatForm extends AbstractType {
         $builder
             ->add('id' ,'hidden')
             ->add('name')
+            //->add('name', 'text', array( 'required' => false) )
             ->add('description')
+            //->add('description', 'textarea', array( 'required' => false ))
             ->add('save', 'submit', array('label' => 'Save Cat'));
     }
 

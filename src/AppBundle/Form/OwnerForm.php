@@ -1,5 +1,11 @@
 <?php
-namespace AppBundle\Form\Cat;
+namespace AppBundle\Form;
+/**
+ * I am the Owner form. I describe the requirements for a Owner form.
+ *
+ * @author John Allen
+ * @version 1.0
+ */
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -16,8 +22,9 @@ class OwnerForm extends AbstractType {
     public function buildForm(FormBuilderInterface $builder, array $options){
         $builder
             ->add('id', 'hidden')
-            ->add('firstName')
-            ->add('lastName');
+            ->add('firstName', 'text',  array('label' => 'First Name'))
+            ->add('lastName', 'text',  array('label' => 'Last Name'))
+            ->add('save', 'submit', array('label' => 'Save Owner'));
     }
 
     /**

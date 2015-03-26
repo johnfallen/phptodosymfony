@@ -4,3 +4,8 @@ body{
 	padding: 1em;
 	width:75%;
 }
+
+form div {margin-bottom:.25em;}
+form div label {width:10%; font-weight: bold}
+form div input[type=text], form div textarea {width:60%;}
+form div .error {color: #ff0000; font-weight: bolder;}

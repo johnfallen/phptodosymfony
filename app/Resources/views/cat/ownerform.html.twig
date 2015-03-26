@@ -1,0 +1,25 @@
+{#
+ * I am the Cat Owner edit form template.
+ *
+ * @author John Allen
+ * @version 1.0
+#}
+{% extends "cat/base.html.twig" %}
+{% block content %}
+    <h1>Edit Cat Owner</h1>
+
+    {{ form_start( form ) }}
+
+    {{ form_widget(form) }}
+
+    {{ form_end(form) }}
+
+
+    {# the delete link #}
+    {% if owner is not null %}
+        <hr />
+        <p>
+            <a href="{{ url('catOwnerDelete', { id : owner.getID() }) }}">Delete Owner &raquo;</a>
+        </p>
+    {% endif %}
+{% endblock %}
